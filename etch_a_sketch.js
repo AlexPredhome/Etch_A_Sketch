@@ -24,9 +24,11 @@ function resetGrid() {
     gridContainer.innerHTML = ''; // Clear existing cells
     createGrid(gridSize); // Recreate grid
 }
-
+//Set grid based on prompt and create grid
 function getGridSize(){
-    let gridSize = prompt("How many squares per side would you like?");
+    const gridSize = prompt("How many squares per side would you like?");
+    gridContainer.innerHTML = '';   
+    createGrid(gridSize);
 }
 
 
