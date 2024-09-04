@@ -1,8 +1,10 @@
 // script.js
 const gridContainer = document.getElementById('grid');
 const resetButton = document.getElementById('reset');
-const gridSize = 16; // You can change this for different grid sizes
+const promptButton = document.getElementById('prompt');
+const gridSize = prompt("How many squares per side would you like?"); // You can change this for different grid sizes
 
+//Set grid based on size request
 function createGrid(size) {
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -23,7 +25,15 @@ function resetGrid() {
     createGrid(gridSize); // Recreate grid
 }
 
+function getGridSize(){
+    let gridSize = prompt("How many squares per side would you like?");
+}
+
+
 resetButton.addEventListener('click', resetGrid);
+promptButton.addEventListener('click', getGridSize);
+
+
 
 // Initialize grid on page load
 createGrid(gridSize);
