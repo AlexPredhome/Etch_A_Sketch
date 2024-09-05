@@ -20,12 +20,20 @@ function createGrid(size) {
 
 // Reset grid to blank state
 function resetGrid() {
+    let gridSize;
     gridContainer.innerHTML = ''; // Clear existing cells
     createGrid(gridSize); // Recreate grid
 }
 //Set grid based on prompt and create grid
 function getGridSize(){
-    const gridSize = prompt("How many squares per side would you like?"); // You can change this for different grid sizes
+    let gridSize;
+    let maxSize = 100;
+
+    do {
+        gridSize = prompt(`How many squares per side would you like? (max ${maxSize} squares)`); // You can change this for different grid sizes
+      } while (gridSize > maxSize); // run until you select something within the limit of 100
+     alert(`Your input: ${gridSize}`); 
+
     gridContainer.innerHTML = '';   
     createGrid(gridSize);
 }
@@ -37,4 +45,4 @@ promptButton.addEventListener('click', getGridSize);
 
 
 // Initialize grid on page load
-createGrid(gridSize);
+//createGrid(gridSize);
