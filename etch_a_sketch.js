@@ -2,7 +2,6 @@
 const gridContainer = document.getElementById('grid');
 const resetButton = document.getElementById('reset');
 const promptButton = document.getElementById('prompt');
-const gridSize = prompt("How many squares per side would you like?"); // You can change this for different grid sizes
 
 //Set grid based on size request
 function createGrid(size) {
@@ -26,7 +25,7 @@ function resetGrid() {
 }
 //Set grid based on prompt and create grid
 function getGridSize(){
-    const gridSize = prompt("How many squares per side would you like?");
+    const gridSize = prompt("How many squares per side would you like?"); // You can change this for different grid sizes
     gridContainer.innerHTML = '';   
     createGrid(gridSize);
 }
