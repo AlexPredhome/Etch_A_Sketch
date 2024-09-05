@@ -1,4 +1,3 @@
-// script.js
 const gridContainer = document.getElementById('grid');
 const resetButton = document.getElementById('reset');
 const promptButton = document.getElementById('prompt');
@@ -34,15 +33,10 @@ function getGridSize(){
       } while (gridSize > maxSize); // run until you select something within the limit of 100
      alert(`Your input: ${gridSize}`); 
 
-    gridContainer.innerHTML = '';   
+    gridContainer.innerHTML = '';   //reset grid and initialize it
     createGrid(gridSize);
 }
 
 
 resetButton.addEventListener('click', resetGrid);
 promptButton.addEventListener('click', getGridSize);
-
-
-
-// Initialize grid on page load
-//createGrid(gridSize);
