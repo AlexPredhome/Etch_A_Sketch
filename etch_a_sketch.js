@@ -11,11 +11,23 @@ function createGrid(size) {
         const cell = document.createElement('div');
         cell.classList.add('grid-cell');
         cell.addEventListener('mouseover', () => {
-            cell.style.backgroundColor = 'black'; // Change color on hover
+            let randomColor = getRandomRGB();
+            cell.style.backgroundColor = randomColor; // Change color on hover
         });
         gridContainer.appendChild(cell);
     }
 }
+
+function getRandomRGB() {
+    // Generate random values for R, G, and B components (0-255)
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+  
+    // Return the RGB color in string format so the function can run
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
 
 // Reset grid to blank state
 function resetGrid() {
@@ -31,7 +43,7 @@ function getGridSize(){
     do {
         gridSize = prompt(`How many squares per side would you like? (max ${maxSize} squares)`); // You can change this for different grid sizes
       } while (gridSize > maxSize); // run until you select something within the limit of 100
-     alert(`Your input: ${gridSize}`); 
+     alert(`You chose: ${gridSize}`); 
 
     gridContainer.innerHTML = '';   //reset grid and initialize it
     createGrid(gridSize);
